@@ -30,5 +30,4 @@ int main()
     int rand = 5;
     srand(rand);
     printf("%d\n", rand);
-
 }
