@@ -1,3 +1,6 @@
+/*  Converts strings to integers
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -11,6 +14,10 @@ int myatoi(char *s)
     {
         if (s[i] >= '0' && s[i] <= '9') // only works in this range
         {
+            /*  operator precedence rocks!! 
+            *   You see that this only works because 
+            *   * is higher in precedence than +
+            */
             num = 10 * num + (s[i] - '0'); // converts to numeric digit by removing the '0' char
         }
         else

@@ -1,3 +1,9 @@
+/*  Binary search 
+*   Finds numbers in a sorted array by searching the respective
+*   half array based on the value being searched for.
+*
+*   Needs some further work, doesn't work everytime
+*/
 #include <stdio.h>
 
 int bin_search(int x, int v[], int n)
