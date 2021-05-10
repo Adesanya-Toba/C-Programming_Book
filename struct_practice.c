@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 typedef struct
 {
@@ -24,7 +25,7 @@ int main ()
     help->x = 40;
     help->y = 26;
 
-    int8_t num;
+    uint8_t num;
     scanf("%hhd",&num);
     printf("Is this your number: %d\n", num);
 
