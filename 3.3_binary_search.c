@@ -6,6 +6,7 @@
 *   I prefer this one.
 */
 #include <stdio.h>
+#include <time.h>
 
 int bin_search(int x, int v[], int n)
 {
@@ -30,8 +31,20 @@ int main()
 {
     int a[] = {20, 22, 29, 32, 47, 52, 98};
     int size = sizeof a / sizeof(int);
-    int var = 32;
+    int var = 20, result;
+
+    clock_t start, end;
+    double time_used;
 
     printf("size of arrary is: %d\n", size);
-    printf("%d was found at index %d in the array\n", var, bin_search(var, a, size));
+
+    start = clock();
+    scanf("%d", &var);
+    result = bin_search(var, a, size);
+    end = clock();
+
+    printf("%d was found at index %d in the array\n", var, result);
+
+    time_used = (double)(end - start) / CLOCKS_PER_SEC;
+    printf("Time taken to find %d was: %f seconds\n", var, time_used);
 }
