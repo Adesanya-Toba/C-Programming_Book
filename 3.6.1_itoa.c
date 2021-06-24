@@ -29,6 +29,7 @@ void itoa(int n, char s[])
         s[i++] = n  % 10 + '0';
     }while ((n /= 10) > 0);
 
+    // very smart!
     if (sign < 0)
         s[i++] = '-';
     s[i] = '\0';
@@ -37,8 +38,8 @@ void itoa(int n, char s[])
 
 int main()
 {
-    int var = 254;
+    int var = -256;
     char str[10];
-    itoa(10, str);
+    itoa(var, str);
     printf("%d in string is: \"%s\"\n", var, str);
 }
