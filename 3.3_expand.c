@@ -1,7 +1,8 @@
-/*  A function to expand short hand notations like a-z in string s1
-*   into the equivalent complete list (abcdefghi...xyz) in s2
-*   
-*   Also allow for either case and digits.
+/**
+ *  A function to expand short hand notations like a-z in string s1
+ *  into the equivalent complete list (abcdefghi...xyz) in s2
+ *  
+ *   Also allow for either case and digits.
 */
 #include <stdio.h>
 #include <string.h>

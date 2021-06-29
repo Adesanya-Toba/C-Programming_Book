@@ -5,12 +5,13 @@
 void reverse(char s[])
 {
     int c, i, j;
-    /*  Using the comma (,) operator in between some expressions
-    *   ensures the expressions are evaluated from left to right
-    *   and the value of the result is of the type of the right operand.  
-    *
-    *   Commas used in function arguments and variable declarations
-    *   do not guarantee left to right evaluation.
+    /**
+     *  Using the comma (,) operator in between some expressions
+     *  ensures the expressions are evaluated from left to right
+     *  and the value of the result is of the type of the right operand.  
+     *
+     *  Commas used in function arguments and variable declarations
+     *  do not guarantee left to right evaluation.
     */
     for (i = 0, j = strlen(s) - 1; i < j; i++, j--){
         c = s[i], s[i] = s[j], s[j] = c;
