@@ -1,12 +1,21 @@
-/**
- *  itoa: convert n to characters in s
+/** 
+ * Ex. 3.4: itoa to handle the largest negative integer.
  * 
- * Note: that the '0' is actually 48 in decimal.
+ * In the previous version, number = -2147483648 would fail at n =-n,because the max value of integer is 2147483647
+ * 
+ * Modifying itoa to handle these situations. 
+ * ->   sign is stored as  the number itself, 
+ * ->   absolute value of each digit is stored in the string and 
+ * ->   while loop is tested not for 0
+ * 
 */
 
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+
+#define abs(x) ( (x) > 0 ? x :-(x) )
+#define MAXLINE 1000
 
 void reverse(char s[])
 {
@@ -28,17 +37,18 @@ void itoa(char s[], int n)
 {
     int i, sign;
 
-    if ((sign = n) < 0) // record sign 
-        n = -n; // make positive
+    sign = n;
     i = 0;
+
     do{
         /* generates digits in reverse order */
-        s[i++] = n  % 10 + '0';
-    }while ((n /= 10) > 0);
+        s[i++] = abs(n % 10) + '0';
+    }while ((n /= 10) != 0);
 
     // very smart!
     if (sign < 0)
         s[i++] = '-';
+    
     s[i] = '\0';
     reverse(s); 
 }
@@ -46,11 +56,7 @@ void itoa(char s[], int n)
 int main()
 {
     int var = -2147483648;
-    char str[10];
+    char str[MAXLINE];
     itoa(str, var);
-    printf("%d in string is: \"%s\"\n", var, str);
-
-    int neg = -157;
-    // printf("%d\n", neg % 10);
-    printf("%d\n", ('0'));
+    printf("%d as a string is: \"%s\"\n", var, str);
 }

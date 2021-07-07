@@ -30,11 +30,11 @@ int main()
 
     printf("Size of long is: %ld bytes%s\n", sizeof(long), sizeof(long) == 1? "" : "s");
     printf("Minimum value for a signed int is: %ld\n", -(long) ((unsigned long)(~0) >> 1) - 1);
-    printf("Maximum value for a signed int is: %ld\n\n", (long) ((unsigned long)(~0) >> 1));
+    printf("Maximum value for a signed int is: %ld\n\n\n", (long) ((unsigned long)(~0) >> 1));
 
     printf("Size of long int is: %ld\n", sizeof(long int));
     printf("Size of long double is: %ld\n", sizeof(long double)); // this is huuuggee 16 bytes!!
-    printf("Size of long long is: %ld\n\n", sizeof(long long));
+    printf("Size of long long is: %ld\n\n\n", sizeof(long long));
 
     printf("Size of unsigned char is: %ld byte\n", sizeof(charsize));
     printf("Maximum value for an unsigned char is: %u\n\n", (unsigned char)~0);
