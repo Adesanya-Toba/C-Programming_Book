@@ -28,6 +28,17 @@ void itob(char *s, int n, int base)
     do{
         /* generates digits in reverse order */
         temp = abs(n % base);
+        
+        /** 
+         * Remember this conversion: to convert an integer in base 10
+         * to it's corresponding ASCII character, use
+         * 
+         * ->       n + 'A' - 10      OR
+         * ->       n + 'a' - 10
+         * 
+         * The number n, plus the first ASCII character you want, minus
+         * base 10.
+        */
         s[i++] = (temp > 9) ? temp + 'A' - 10: temp + '0';
     } while ((n /= base) != 0);
 
