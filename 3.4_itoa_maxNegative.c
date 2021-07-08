@@ -42,7 +42,7 @@ void itoa(char s[], int n)
 
     do{
         /* generates digits in reverse order */
-        s[i++] = abs(n % 10) + '0';
+        s[i++] = abs(n % 10) + '0'; // absolute required because negative characters are added to '0' = 48, this would give a new character.
     }while ((n /= 10) != 0);
 
     // very smart!
