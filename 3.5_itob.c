@@ -20,14 +20,15 @@ void reverse(char s[])
 
 void itob(char *s, int n, int base)
 {
-    int i, sign;
+    int i, sign, temp;
 
     sign = n;
     i = 0;
 
     do{
         /* generates digits in reverse order */
-        s[i++] = abs(n % base) + '0'; // absolute required because negative characters are added to '0' = 48, this would give a new character.
+        temp = abs(n % base);
+        s[i++] = (temp > 9) ? temp + 'A' - 10: temp + '0';
     } while ((n /= base) != 0);
 
     // very smart!
@@ -40,7 +41,7 @@ void itob(char *s, int n, int base)
 
 int main(void)
 {
-    int var = 200;
+    int var = 123456789;
     char str[MAXLINE];
     int base = 16;
 
